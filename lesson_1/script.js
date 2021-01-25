@@ -33,17 +33,22 @@ class CalcCash {
 		return result;
 	}
 }
-let lesson = new CalcCash(null, data.cash);
 
-function makeBusiness(director, teacher = 'Максим', allModule, gang, course) {
+const { cash, react, react: [first], add } = data;
+
+let lesson = new CalcCash(null, cash);
+
+
+
+function makeBusiness(director, allModule, gang, course, teacher = 'Максим') {
 	// teacher = teacher || 'Максим';
-	let sumTech = data.react.concat(data.add, 'и другие');
+	const sumTech = [...react, ...add, 'и другие'];
 	console.log(`Стартуем новый курс: ${course}. Владелец: ${director}, преподаватель: ${teacher}. Всего уроков: ${allModule}.
 	Команда Академии: ${gang}`);
-	console.log(`Первое что изучим будет ${data.react[0]}. Он очень похож на HTML!`);
+	console.log(`Первое что изучим будет ${first}. Он очень похож на HTML!`);
 	console.log(`Технологии которые мы изучим: `);
-	console.log.apply(null, sumTech);
+	console.log(`${sumTech}`);
 
 }
 
-makeBusiness.apply(null, ['Артем',, lesson.summCash(), command, nameCourse]);
+makeBusiness('Артем', lesson.summCash(), command, nameCourse);
